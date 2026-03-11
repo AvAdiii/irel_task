@@ -2,8 +2,11 @@
 venv/
 .venv/
 
-# generated pipeline outputs (videos, audio, frames, JSON artifacts)
-data/
+# raw media — too large for git
+data/*/video*.mp4
+data/*/video*.m4a
+data/*/audio.wav
+data/*/frames/
 
 # python bytecode
 __pycache__/

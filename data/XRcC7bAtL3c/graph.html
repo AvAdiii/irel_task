@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #f8f9fa;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#52be80", "font": {"color": "#2c3e50"}, "id": "pre-order traversal", "label": "pre-order traversal", "level": 12, "shape": "dot", "size": 33, "title": "\u003cb\u003epre-order traversal\u003c/b\u003e\u003cbr\u003ementions: 13\u003cbr\u003efirst: 0s\u003cbr\u003elast: 270s\u003cbr\u003esources: asr, asr+ocr, ocr\u003cbr\u003etopo rank: 13/14"}, {"color": "#2471a3", "font": {"color": "#2c3e50"}, "id": "root node", "label": "root node", "level": 2, "shape": "dot", "size": 50, "title": "\u003cb\u003eroot node\u003c/b\u003e\u003cbr\u003ementions: 34\u003cbr\u003efirst: 0s\u003cbr\u003elast: 406s\u003cbr\u003esources: asr+ocr, ocr\u003cbr\u003etopo rank: 3/14"}, {"color": "#1a5276", "font": {"color": "#2c3e50"}, "id": "tree", "label": "tree", "level": 0, "shape": "dot", "size": 32, "title": "\u003cb\u003etree\u003c/b\u003e\u003cbr\u003ementions: 12\u003cbr\u003efirst: 3s\u003cbr\u003elast: 149s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 1/14"}, {"color": "#d4e6f1", "font": {"color": "#2c3e50"}, "id": "tree traversal", "label": "tree traversal", "level": 8, "shape": "dot", "size": 22, "title": "\u003cb\u003etree traversal\u003c/b\u003e\u003cbr\u003ementions: 2\u003cbr\u003efirst: 3s\u003cbr\u003elast: 12s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 9/14"}, {"color": "#a9dfbf", "font": {"color": "#2c3e50"}, "id": "in-order traversal", "label": "in-order traversal", "level": 10, "shape": "dot", "size": 30, "title": "\u003cb\u003ein-order traversal\u003c/b\u003e\u003cbr\u003ementions: 10\u003cbr\u003efirst: 6s\u003cbr\u003elast: 275s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 11/14"}, {"color": "#7dcea0", "font": {"color": "#2c3e50"}, "id": "post-order traversal", "label": "post-order traversal", "level": 11, "shape": "dot", "size": 37, "title": "\u003cb\u003epost-order traversal\u003c/b\u003e\u003cbr\u003ementions: 17\u003cbr\u003efirst: 6s\u003cbr\u003elast: 391s\u003cbr\u003esources: asr, asr+ocr, ocr\u003cbr\u003etopo rank: 12/14"}, {"color": "#3498db", "font": {"color": "#2c3e50"}, "id": "left subtree", "label": "left subtree", "level": 4, "shape": "dot", "size": 49, "title": "\u003cb\u003eleft subtree\u003c/b\u003e\u003cbr\u003ementions: 29\u003cbr\u003efirst: 12s\u003cbr\u003elast: 406s\u003cbr\u003esources: asr, asr+ocr, ocr\u003cbr\u003etopo rank: 5/14"}, {"color": "#1f618d", "font": {"color": "#2c3e50"}, "id": "node", "label": "node", "level": 1, "shape": "dot", "size": 31, "title": "\u003cb\u003enode\u003c/b\u003e\u003cbr\u003ementions: 11\u003cbr\u003efirst: 12s\u003cbr\u003elast: 174s\u003cbr\u003esources: asr, ocr\u003cbr\u003etopo rank: 2/14"}, {"color": "#5dade2", "font": {"color": "#2c3e50"}, "id": "right subtree", "label": "right subtree", "level": 5, "shape": "dot", "size": 33, "title": "\u003cb\u003eright subtree\u003c/b\u003e\u003cbr\u003ementions: 13\u003cbr\u003efirst: 22s\u003cbr\u003elast: 406s\u003cbr\u003esources: asr, asr+ocr, ocr\u003cbr\u003etopo rank: 6/14"}, {"color": "#d5f5e3", "font": {"color": "#2c3e50"}, "id": "traversal technique", "label": "traversal technique", "level": 9, "shape": "dot", "size": 24, "title": "\u003cb\u003etraversal technique\u003c/b\u003e\u003cbr\u003ementions: 4\u003cbr\u003efirst: 78s\u003cbr\u003elast: 149s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 10/14"}, {"color": "#85c1e9", "font": {"color": "#2c3e50"}, "id": "binary tree", "label": "binary tree", "level": 6, "shape": "dot", "size": 22, "title": "\u003cb\u003ebinary tree\u003c/b\u003e\u003cbr\u003ementions: 2\u003cbr\u003efirst: 99s\u003cbr\u003elast: 110s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 7/14"}, {"color": "#2980b9", "font": {"color": "#2c3e50"}, "id": "children", "label": "children", "level": 3, "shape": "dot", "size": 27, "title": "\u003cb\u003echildren\u003c/b\u003e\u003cbr\u003ementions: 7\u003cbr\u003efirst: 105s\u003cbr\u003elast: 143s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 4/14"}, {"color": "#27ae60", "font": {"color": "#2c3e50"}, "id": "leaf node", "label": "leaf node", "level": 13, "shape": "dot", "size": 22, "title": "\u003cb\u003eleaf node\u003c/b\u003e\u003cbr\u003ementions: 2\u003cbr\u003efirst: 114s\u003cbr\u003elast: 120s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 14/14"}, {"color": "#aed6f1", "font": {"color": "#2c3e50"}, "id": "dummy node", "label": "dummy node", "level": 7, "shape": "dot", "size": 22, "title": "\u003cb\u003edummy node\u003c/b\u003e\u003cbr\u003ementions: 2\u003cbr\u003efirst: 120s\u003cbr\u003elast: 143s\u003cbr\u003esources: asr\u003cbr\u003etopo rank: 8/14"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#e74c3c", "from": "tree", "label": "prereq", "title": "prereq (conf=0.90)", "to": "binary tree", "width": 2.7}, {"arrows": "to", "color": "#e74c3c", "from": "tree", "label": "prereq", "title": "prereq (conf=0.90)", "to": "tree traversal", "width": 2.7}, {"arrows": "to", "color": "#e74c3c", "from": "binary tree", "label": "prereq", "title": "prereq (conf=0.90)", "to": "tree traversal", "width": 2.7}, {"arrows": "to", "color": "#e74c3c", "from": "node", "label": "prereq", "title": "prereq (conf=0.80)", "to": "root node", "width": 2.4000000000000004}, {"arrows": "to", "color": "#e74c3c", "from": "node", "label": "prereq", "title": "prereq (conf=0.80)", "to": "leaf node", "width": 2.4000000000000004}, {"arrows": "to", "color": "#e74c3c", "from": "root node", "label": "prereq", "title": "prereq (conf=0.80)", "to": "tree traversal", "width": 2.4000000000000004}, {"arrows": "to", "color": "#e74c3c", "from": "children", "label": "prereq", "title": "prereq (conf=0.70)", "to": "left subtree", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "children", "label": "prereq", "title": "prereq (conf=0.70)", "to": "right subtree", "width": 2.0999999999999996}, {"arrows": "to", "color": "#3498db", "from": "tree traversal", "label": "refines", "title": "refines (conf=0.90)", "to": "pre-order traversal", "width": 2.7}, {"arrows": "to", "color": "#3498db", "from": "tree traversal", "label": "refines", "title": "refines (conf=0.90)", "to": "in-order traversal", "width": 2.7}, {"arrows": "to", "color": "#3498db", "from": "tree traversal", "label": "refines", "title": "refines (conf=0.90)", "to": "post-order traversal", "width": 2.7}, {"arrows": "to", "color": "#e74c3c", "from": "traversal technique", "label": "prereq", "title": "prereq (conf=0.70)", "to": "pre-order traversal", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "traversal technique", "label": "prereq", "title": "prereq (conf=0.70)", "to": "in-order traversal", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "traversal technique", "label": "prereq", "title": "prereq (conf=0.70)", "to": "post-order traversal", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "left subtree", "label": "prereq", "title": "prereq (conf=0.70)", "to": "pre-order traversal", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "right subtree", "label": "prereq", "title": "prereq (conf=0.70)", "to": "pre-order traversal", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "left subtree", "label": "prereq", "title": "prereq (conf=0.80)", "to": "in-order traversal", "width": 2.4}, {"arrows": "to", "color": "#e74c3c", "from": "right subtree", "label": "prereq", "title": "prereq (conf=0.80)", "to": "in-order traversal", "width": 2.4}, {"arrows": "to", "color": "#e74c3c", "from": "left subtree", "label": "prereq", "title": "prereq (conf=0.80)", "to": "post-order traversal", "width": 2.4}, {"arrows": "to", "color": "#e74c3c", "from": "right subtree", "label": "prereq", "title": "prereq (conf=0.80)", "to": "post-order traversal", "width": 2.4}, {"arrows": "to", "color": "#2ecc71", "from": "dummy node", "label": "part-of", "title": "part-of (conf=0.60)", "to": "traversal technique", "width": 1.7999999999999998}, {"arrows": "to", "color": "#e74c3c", "from": "root node", "label": "prereq", "title": "prereq (conf=0.70)", "to": "right subtree", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "root node", "label": "prereq", "title": "prereq (conf=0.70)", "to": "left subtree", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "node", "label": "prereq", "title": "prereq (conf=0.70)", "to": "right subtree", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "node", "label": "prereq", "title": "prereq (conf=0.70)", "to": "left subtree", "width": 2.0999999999999996}, {"arrows": "to", "color": "#e74c3c", "from": "root node", "label": "prereq", "title": "prereq (conf=0.75)", "to": "pre-order traversal", "width": 2.25}, {"arrows": "to", "color": "#e74c3c", "from": "node", "label": "prereq", "title": "prereq (conf=0.75)", "to": "pre-order traversal", "width": 2.25}, {"arrows": "to", "color": "#e74c3c", "from": "root node", "label": "prereq", "title": "prereq (conf=0.75)", "to": "in-order traversal", "width": 2.25}, {"arrows": "to", "color": "#e74c3c", "from": "root node", "label": "prereq", "title": "prereq (conf=0.75)", "to": "post-order traversal", "width": 2.25}, {"arrows": "to", "color": "#e74c3c", "from": "node", "label": "prereq", "title": "prereq (conf=0.75)", "to": "post-order traversal", "width": 2.25}, {"arrows": "to", "color": "#e74c3c", "from": "tree", "label": "prereq", "title": "prereq (conf=0.75)", "to": "node", "width": 2.25}, {"arrows": "to", "color": "#bdc3c7", "from": "pre-order traversal", "label": "", "title": "temporal (conf=0.50)", "to": "leaf node", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "root node", "label": "", "title": "temporal (conf=0.50)", "to": "traversal technique", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "root node", "label": "", "title": "temporal (conf=0.50)", "to": "binary tree", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "root node", "label": "", "title": "temporal (conf=0.50)", "to": "children", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "tree", "label": "", "title": "temporal (conf=0.50)", "to": "traversal technique", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "tree", "label": "", "title": "temporal (conf=0.50)", "to": "children", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "tree", "label": "", "title": "temporal (conf=0.50)", "to": "dummy node", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "tree traversal", "label": "", "title": "temporal (conf=0.50)", "to": "traversal technique", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "tree traversal", "label": "", "title": "temporal (conf=0.50)", "to": "leaf node", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "in-order traversal", "label": "", "title": "temporal (conf=0.50)", "to": "leaf node", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "post-order traversal", "label": "", "title": "temporal (conf=0.50)", "to": "leaf node", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "left subtree", "label": "", "title": "temporal (conf=0.50)", "to": "traversal technique", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "left subtree", "label": "", "title": "temporal (conf=0.50)", "to": "binary tree", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "left subtree", "label": "", "title": "temporal (conf=0.50)", "to": "leaf node", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "node", "label": "", "title": "temporal (conf=0.50)", "to": "traversal technique", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "node", "label": "", "title": "temporal (conf=0.50)", "to": "binary tree", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "node", "label": "", "title": "temporal (conf=0.50)", "to": "children", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "right subtree", "label": "", "title": "temporal (conf=0.50)", "to": "binary tree", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "right subtree", "label": "", "title": "temporal (conf=0.50)", "to": "leaf node", "width": 1.5}, {"arrows": "to", "color": "#bdc3c7", "from": "right subtree", "label": "", "title": "temporal (conf=0.50)", "to": "dummy node", "width": 1.5}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"layout": {"hierarchical": {"enabled": true, "direction": "UD", "sortMethod": "directed", "levelSeparation": 120, "nodeSpacing": 200}}, "physics": {"hierarchicalRepulsion": {"centralGravity": 0.0, "springLength": 150, "springConstant": 0.01, "nodeDistance": 200}}, "edges": {"smooth": {"type": "cubicBezier", "forceDirection": "vertical"}, "arrows": {"to": {"enabled": true, "scaleFactor": 0.8}}}, "nodes": {"shape": "box", "font": {"size": 14, "face": "arial"}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
