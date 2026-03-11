@@ -1,0 +1,21 @@
+# virtual environment
+venv/
+.venv/
+
+# generated pipeline outputs (videos, audio, frames, JSON artifacts)
+data/
+
+# python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# runtime logs
+*.log
+*.txt
+!requirements.txt
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store

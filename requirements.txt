@@ -1,0 +1,7 @@
+yt-dlp
+openai-whisper
+pytesseract
+Pillow
+scenedetect[opencv]
+rapidfuzz
+pyvis
