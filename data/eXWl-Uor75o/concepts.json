@@ -1,0 +1,60 @@
+{
+  "video_id": "eXWl-Uor75o",
+  "total_concepts": 1,
+  "concepts": [
+    {
+      "name": "right subtree",
+      "mention_count": 1,
+      "first_mention": 189.4,
+      "last_mention": 193.2,
+      "sources": [
+        "ocr"
+      ],
+      "timestamps": [
+        {
+          "start": 189.4,
+          "end": 193.2
+        }
+      ]
+    }
+  ],
+  "example_tree": {
+    "description": "binary tree example used in the lecture",
+    "node_labels": [
+      "A",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "M",
+      "N",
+      "O",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W"
+    ],
+    "node_mention_counts": {
+      "A": 2,
+      "D": 4,
+      "E": 5,
+      "F": 1,
+      "G": 1,
+      "H": 1,
+      "I": 3,
+      "M": 2,
+      "N": 1,
+      "O": 1,
+      "R": 2,
+      "S": 1,
+      "T": 3,
+      "U": 1,
+      "V": 2,
+      "W": 2
+    }
+  }
+}

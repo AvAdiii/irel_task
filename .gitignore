@@ -17,6 +17,7 @@ __pycache__/
 *.log
 m2_log.txt
 run_log*.txt
+batch_log.txt
 
 # editor / OS
 .vscode/

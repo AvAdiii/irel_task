@@ -1,0 +1,73 @@
+{
+  "video_id": "azXr6nTaD9M",
+  "total_nodes": 1,
+  "total_edges": 0,
+  "topological_order": [
+    "stack"
+  ],
+  "nodes": [
+    {
+      "id": "stack",
+      "mention_count": 2,
+      "first_mention": 109.7,
+      "last_mention": 327.4,
+      "sources": [
+        "asr"
+      ]
+    }
+  ],
+  "edges": [],
+  "causal_anchors_detected": 0,
+  "causal_edges_created": 0,
+  "example_tree": {
+    "description": "binary tree example used in the lecture",
+    "node_labels": [
+      "A",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "Y"
+    ],
+    "node_mention_counts": {
+      "A": 3,
+      "C": 1,
+      "D": 2,
+      "E": 10,
+      "F": 1,
+      "G": 1,
+      "H": 14,
+      "I": 29,
+      "J": 6,
+      "K": 2,
+      "L": 13,
+      "M": 16,
+      "N": 26,
+      "O": 1,
+      "P": 4,
+      "R": 10,
+      "S": 17,
+      "T": 23,
+      "U": 13,
+      "V": 3,
+      "W": 3,
+      "Y": 1
+    }
+  }
+}

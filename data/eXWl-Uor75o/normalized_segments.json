@@ -1,0 +1,758 @@
+[
+  {
+    "start": 30.0,
+    "end": 32.0,
+    "spoken_text": "обыти�  Dartmouth",
+    "spoken_tokens": [
+      {
+        "token": "обыти�",
+        "lang": "other"
+      },
+      {
+        "token": "Dartmouth",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": "Ay के"
+  },
+  {
+    "start": 39.0,
+    "end": 41.0,
+    "spoken_text": "నియి న్఩షి య్చి చి అగ్చద లోలి ఆయడికోతమాటరి。",
+    "spoken_tokens": [
+      {
+        "token": "నియి",
+        "lang": "other"
+      },
+      {
+        "token": "న్఩షి",
+        "lang": "other"
+      },
+      {
+        "token": "య్చి",
+        "lang": "other"
+      },
+      {
+        "token": "చి",
+        "lang": "other"
+      },
+      {
+        "token": "అగ్చద",
+        "lang": "other"
+      },
+      {
+        "token": "లోలి",
+        "lang": "other"
+      },
+      {
+        "token": "ఆయడికోతమాటరి。",
+        "lang": "other"
+      }
+    ],
+    "dominant_lang": "mixed",
+    "ocr_keywords": [],
+    "visual_text_raw": "कर, | पक"
+  },
+  {
+    "start": 155.34,
+    "end": 163.34,
+    "spoken_text": "you can also make the那么 so.",
+    "spoken_tokens": [
+      {
+        "token": "you",
+        "lang": "en"
+      },
+      {
+        "token": "can",
+        "lang": "en"
+      },
+      {
+        "token": "also",
+        "lang": "en"
+      },
+      {
+        "token": "make",
+        "lang": "en"
+      },
+      {
+        "token": "the那么",
+        "lang": "en"
+      },
+      {
+        "token": "so.",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [
+      "Carne:",
+      "divide",
+      "दिए"
+    ],
+    "visual_text_raw": "el | F\\,FF_..__JL\" Carne: ag“'c,e.nal.\\\"“\"'v\\é; Wb | divide | Uk | दिए"
+  },
+  {
+    "start": 163.34,
+    "end": 171.18,
+    "spoken_text": "ఆచి� easerence.",
+    "spoken_tokens": [
+      {
+        "token": "ఆచి�",
+        "lang": "other"
+      },
+      {
+        "token": "easerence.",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [
+      "divide",
+      "FY&CVW“"
+    ],
+    "visual_text_raw": "रा | oo | divide | FY&CVW“"
+  },
+  {
+    "start": 171.18,
+    "end": 175.74,
+    "spoken_text": "రమము స్రం USD థిఆవూభ్చి jokes about easy-to-take",
+    "spoken_tokens": [
+      {
+        "token": "రమము",
+        "lang": "other"
+      },
+      {
+        "token": "స్రం",
+        "lang": "other"
+      },
+      {
+        "token": "USD",
+        "lang": "en"
+      },
+      {
+        "token": "థిఆవూభ్చి",
+        "lang": "other"
+      },
+      {
+        "token": "jokes",
+        "lang": "en"
+      },
+      {
+        "token": "about",
+        "lang": "en"
+      },
+      {
+        "token": "easy-to-take",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": "छा हि"
+  },
+  {
+    "start": 175.74,
+    "end": 178.24,
+    "spoken_text": "అటి ర్ిఆ Dion permett ఆర్చిత్isl Platform",
+    "spoken_tokens": [
+      {
+        "token": "అటి",
+        "lang": "other"
+      },
+      {
+        "token": "ర్ిఆ",
+        "lang": "other"
+      },
+      {
+        "token": "Dion",
+        "lang": "en"
+      },
+      {
+        "token": "permett",
+        "lang": "en"
+      },
+      {
+        "token": "ఆర్చిత్isl",
+        "lang": "en"
+      },
+      {
+        "token": "Platform",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 178.24,
+    "end": 182.92,
+    "spoken_text": "కైన Devi Aspv",
+    "spoken_tokens": [
+      {
+        "token": "కైన",
+        "lang": "other"
+      },
+      {
+        "token": "Devi",
+        "lang": "en"
+      },
+      {
+        "token": "Aspv",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [
+      "amnd"
+    ],
+    "visual_text_raw": "amnd"
+  },
+  {
+    "start": 182.92,
+    "end": 189.4,
+    "spoken_text": "థరికి తైరి ఇ精 �ashv",
+    "spoken_tokens": [
+      {
+        "token": "థరికి",
+        "lang": "other"
+      },
+      {
+        "token": "తైరి",
+        "lang": "other"
+      },
+      {
+        "token": "ఇ精",
+        "lang": "other"
+      },
+      {
+        "token": "�ashv",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [
+      "Ufed",
+      "सील",
+      "aﬁ\"unoh\"\"v\\a",
+      "करन"
+    ],
+    "visual_text_raw": "Ufed सील sk | aﬁ\"unoh\"\"v\\a (mcw-‘ | bt करन | नि"
+  },
+  {
+    "start": 189.4,
+    "end": 193.24,
+    "spoken_text": "కే కు�快 � mere",
+    "spoken_tokens": [
+      {
+        "token": "కే",
+        "lang": "other"
+      },
+      {
+        "token": "కు�快",
+        "lang": "other"
+      },
+      {
+        "token": "�",
+        "lang": "other"
+      },
+      {
+        "token": "mere",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [
+      "right"
+    ],
+    "visual_text_raw": "नव | Right"
+  },
+  {
+    "start": 193.24,
+    "end": 196.96,
+    "spoken_text": "ఇపోచ్చి సతేలోకలామన౅ని",
+    "spoken_tokens": [
+      {
+        "token": "ఇపోచ్చి",
+        "lang": "other"
+      },
+      {
+        "token": "సతేలోకలామన౅ని",
+        "lang": "other"
+      }
+    ],
+    "dominant_lang": "mixed",
+    "ocr_keywords": [
+      "दि:",
+      "twe"
+    ],
+    "visual_text_raw": "दि: | twe"
+  },
+  {
+    "start": 196.96,
+    "end": 203.96,
+    "spoken_text": "ṇ compact āhwழṉ",
+    "spoken_tokens": [
+      {
+        "token": "ṇ",
+        "lang": "other"
+      },
+      {
+        "token": "compact",
+        "lang": "en"
+      },
+      {
+        "token": "āhwழṉ",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": "Wb"
+  },
+  {
+    "start": 203.96,
+    "end": 214.88,
+    "spoken_text": "ṇ compact āhwн",
+    "spoken_tokens": [
+      {
+        "token": "ṇ",
+        "lang": "other"
+      },
+      {
+        "token": "compact",
+        "lang": "en"
+      },
+      {
+        "token": "āhwн",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [
+      "Twe",
+      "sort",
+      "सीन",
+      "oma"
+    ],
+    "visual_text_raw": "F\\’oaw‘\"‘ | कि लव Twe | sorted (Gt | सीन | oma"
+  },
+  {
+    "start": 214.88,
+    "end": 216.12,
+    "spoken_text": "hn bhawon",
+    "spoken_tokens": [
+      {
+        "token": "hn",
+        "lang": "en"
+      },
+      {
+        "token": "bhawon",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 216.12,
+    "end": 220.64,
+    "spoken_text": "ṇbody ṣāmen",
+    "spoken_tokens": [
+      {
+        "token": "ṇbody",
+        "lang": "en"
+      },
+      {
+        "token": "ṣāmen",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 220.64,
+    "end": 225.66,
+    "spoken_text": "ṇ sisters ṇb",
+    "spoken_tokens": [
+      {
+        "token": "ṇ",
+        "lang": "other"
+      },
+      {
+        "token": "sisters",
+        "lang": "en"
+      },
+      {
+        "token": "ṇb",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 255.66,
+    "end": 257.66,
+    "spoken_text": "collateral",
+    "spoken_tokens": [
+      {
+        "token": "collateral",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 261.52,
+    "end": 264.26,
+    "spoken_text": "proyect",
+    "spoken_tokens": [
+      {
+        "token": "proyect",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 267.34,
+    "end": 269.22,
+    "spoken_text": "floor",
+    "spoken_tokens": [
+      {
+        "token": "floor",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 269.22,
+    "end": 271.98,
+    "spoken_text": "floor",
+    "spoken_tokens": [
+      {
+        "token": "floor",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 273.48,
+    "end": 274.54,
+    "spoken_text": "middle",
+    "spoken_tokens": [
+      {
+        "token": "middle",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": "है."
+  },
+  {
+    "start": 274.54,
+    "end": 277.24,
+    "spoken_text": "middle",
+    "spoken_tokens": [
+      {
+        "token": "middle",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 277.24,
+    "end": 278.28,
+    "spoken_text": "here",
+    "spoken_tokens": [
+      {
+        "token": "here",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 278.28,
+    "end": 279.62,
+    "spoken_text": "resistance",
+    "spoken_tokens": [
+      {
+        "token": "resistance",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 279.62,
+    "end": 283.44,
+    "spoken_text": "iler 12",
+    "spoken_tokens": [
+      {
+        "token": "iler",
+        "lang": "en"
+      },
+      {
+        "token": "12",
+        "lang": "other"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 283.44,
+    "end": 291.78,
+    "spoken_text": "Male Me-칼格  extending vivo improperly",
+    "spoken_tokens": [
+      {
+        "token": "Male",
+        "lang": "en"
+      },
+      {
+        "token": "Me-칼格",
+        "lang": "en"
+      },
+      {
+        "token": "extending",
+        "lang": "en"
+      },
+      {
+        "token": "vivo",
+        "lang": "en"
+      },
+      {
+        "token": "improperly",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 304.78,
+    "end": 306.78,
+    "spoken_text": "Middle left arm instead of right palm",
+    "spoken_tokens": [
+      {
+        "token": "Middle",
+        "lang": "en"
+      },
+      {
+        "token": "left",
+        "lang": "en"
+      },
+      {
+        "token": "arm",
+        "lang": "en"
+      },
+      {
+        "token": "instead",
+        "lang": "en"
+      },
+      {
+        "token": "of",
+        "lang": "en"
+      },
+      {
+        "token": "right",
+        "lang": "en"
+      },
+      {
+        "token": "palm",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 313.44,
+    "end": 324.0,
+    "spoken_text": "ahn Percy",
+    "spoken_tokens": [
+      {
+        "token": "ahn",
+        "lang": "en"
+      },
+      {
+        "token": "Percy",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 324.0,
+    "end": 324.74,
+    "spoken_text": "LGBT",
+    "spoken_tokens": [
+      {
+        "token": "LGBT",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 324.74,
+    "end": 325.54,
+    "spoken_text": "Bowser",
+    "spoken_tokens": [
+      {
+        "token": "Bowser",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 325.54,
+    "end": 334.34,
+    "spoken_text": "Shop",
+    "spoken_tokens": [
+      {
+        "token": "Shop",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 334.34,
+    "end": 336.58,
+    "spoken_text": "Water",
+    "spoken_tokens": [
+      {
+        "token": "Water",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 336.58,
+    "end": 341.0,
+    "spoken_text": "What's up",
+    "spoken_tokens": [
+      {
+        "token": "What's",
+        "lang": "en"
+      },
+      {
+        "token": "up",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 406.76,
+    "end": 408.0,
+    "spoken_text": "On Tú volcan",
+    "spoken_tokens": [
+      {
+        "token": "On",
+        "lang": "en"
+      },
+      {
+        "token": "Tú",
+        "lang": "en"
+      },
+      {
+        "token": "volcan",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  },
+  {
+    "start": 468.0,
+    "end": 490.56,
+    "spoken_text": "these preset here somehow you are going to find",
+    "spoken_tokens": [
+      {
+        "token": "these",
+        "lang": "en"
+      },
+      {
+        "token": "preset",
+        "lang": "en"
+      },
+      {
+        "token": "here",
+        "lang": "en"
+      },
+      {
+        "token": "somehow",
+        "lang": "en"
+      },
+      {
+        "token": "you",
+        "lang": "en"
+      },
+      {
+        "token": "are",
+        "lang": "en"
+      },
+      {
+        "token": "going",
+        "lang": "en"
+      },
+      {
+        "token": "to",
+        "lang": "en"
+      },
+      {
+        "token": "find",
+        "lang": "en"
+      }
+    ],
+    "dominant_lang": "en",
+    "ocr_keywords": [],
+    "visual_text_raw": ""
+  }
+]
