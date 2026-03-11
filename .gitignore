@@ -12,8 +12,8 @@ __pycache__/
 
 # runtime logs
 *.log
-*.txt
-!requirements.txt
+m2_log.txt
+run_log*.txt
 
 # editor / OS
 .vscode/
