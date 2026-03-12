@@ -1,67 +1,127 @@
-# Pedagogical Flow Report
-**Video:** `N2P7w22tN9c`
+# Concept DAG Report — N2P7w22tN9c
 
-## Pipeline Summary
-| Metric | Value |
-|--------|-------|
-| Raw ASR segments | 143 |
-| Normalized segments | 140 |
-| Concepts extracted | 12 |
-| Graph edges | 41 |
-| Causal anchors detected | 0 |
-| Causal edges created | 0 |
+**Source language:** English
+**Concepts:** 12 | **Edges:** 41 | **Topo order:** 12/12
 
-## Topological Order (Teaching Sequence)
-1. **edge**
-2. **vertex**
-3. **graph**
-4. **graph traversal**
-5. **tree**
-6. **tree traversal**
-7. **visited**
-8. **stack**
-9. **depth first search**
-10. **traversal technique**
-11. **pre-order traversal**
-12. **breadth first search**
+## Topological Order
+
+1. Edge
+2. Vertex
+3. Graph
+4. Graph Traversal
+5. Tree
+6. Tree Traversal
+7. Visited
+8. Stack
+9. Depth First Search
+10. Traversal Technique
+11. Pre-Order Traversal
+12. Breadth First Search
 
 ## Concepts
-| # | Concept | Mentions | First (s) | Sources |
-|---|---------|----------|-----------|---------|
-| 1 | graph | 12 | 2 | asr, asr+ocr, ocr |
-| 2 | graph traversal | 3 | 36 | asr |
-| 3 | tree | 4 | 48 | asr |
-| 4 | tree traversal | 1 | 48 | asr |
-| 5 | vertex | 5 | 66 | asr |
-| 6 | edge | 3 | 75 | asr |
-| 7 | depth first search | 3 | 174 | asr |
-| 8 | visited | 1 | 304 | asr |
-| 9 | stack | 3 | 425 | asr |
-| 10 | pre-order traversal | 1 | 509 | ocr |
-| 11 | traversal technique | 1 | 639 | asr |
-| 12 | breadth first search | 1 | 668 | asr |
 
-## Example Tree
-Nodes: A, B, C, D, E, F, G, H, I, K, L, M, N, O, P, R, S, T, U, V, W, X, Y
+### Graph
+- Mentions: 12
+- First seen: 00:02
+- Sources: asr, asr+ocr, ocr
 
-## Edge Distribution
-| Edge Type | Count |
-|-----------|-------|
-| is_prerequisite_for | 10 |
-| refines | 3 |
-| temporal_precedence | 28 |
+### Graph Traversal
+- Mentions: 3
+- First seen: 00:36
+- Sources: asr
 
-## Prerequisite Edges (Domain + Causal)
-- **tree** -> **tree traversal** (is_prerequisite_for, conf=0.90)
-- **tree traversal** -> **pre-order traversal** (refines, conf=0.90)
-- **traversal technique** -> **pre-order traversal** (is_prerequisite_for, conf=0.70)
-- **graph** -> **graph traversal** (is_prerequisite_for, conf=0.90)
-- **vertex** -> **graph** (is_prerequisite_for, conf=0.70)
-- **edge** -> **graph** (is_prerequisite_for, conf=0.70)
-- **graph traversal** -> **breadth first search** (refines, conf=0.90)
-- **graph traversal** -> **depth first search** (refines, conf=0.90)
-- **graph** -> **breadth first search** (is_prerequisite_for, conf=0.80)
-- **graph** -> **depth first search** (is_prerequisite_for, conf=0.80)
-- **stack** -> **depth first search** (is_prerequisite_for, conf=0.80)
-- **visited** -> **breadth first search** (is_prerequisite_for, conf=0.70)
-- **visited** -> **depth first search** (is_prerequisite_for, conf=0.70)
+### Tree
+- Mentions: 4
+- First seen: 00:47
+- Sources: asr
+
+### Tree Traversal
+- Mentions: 1
+- First seen: 00:47
+- Sources: asr
+
+### Vertex
+- Mentions: 5
+- First seen: 01:06
+- Sources: asr
+
+### Edge
+- Mentions: 3
+- First seen: 01:14
+- Sources: asr
+
+### Depth First Search
+- Mentions: 3
+- First seen: 02:54
+- Sources: asr
+
+### Visited
+- Mentions: 1
+- First seen: 05:03
+- Sources: asr
+
+### Stack
+- Mentions: 3
+- First seen: 07:04
+- Sources: asr
+
+### Pre-Order Traversal
+- Mentions: 1
+- First seen: 08:29
+- Sources: ocr
+
+### Traversal Technique
+- Mentions: 1
+- First seen: 10:38
+- Sources: asr
+
+### Breadth First Search
+- Mentions: 1
+- First seen: 11:07
+- Sources: asr
+
+## Prerequisite Edges
+
+| From | To | Type | Rule |
+|------|-----|------|------|
+| tree | tree traversal | is_prerequisite_for |  |
+| tree traversal | pre-order traversal | refines |  |
+| traversal technique | pre-order traversal | is_prerequisite_for |  |
+| graph | graph traversal | is_prerequisite_for |  |
+| vertex | graph | is_prerequisite_for |  |
+| edge | graph | is_prerequisite_for |  |
+| graph traversal | breadth first search | refines |  |
+| graph traversal | depth first search | refines |  |
+| graph | breadth first search | is_prerequisite_for |  |
+| graph | depth first search | is_prerequisite_for |  |
+| stack | depth first search | is_prerequisite_for |  |
+| visited | breadth first search | is_prerequisite_for |  |
+| visited | depth first search | is_prerequisite_for |  |
+| graph | tree | temporal_precedence |  |
+| graph | tree traversal | temporal_precedence |  |
+| graph | visited | temporal_precedence |  |
+| graph traversal | visited | temporal_precedence |  |
+| graph traversal | stack | temporal_precedence |  |
+| graph traversal | pre-order traversal | temporal_precedence |  |
+| tree | depth first search | temporal_precedence |  |
+| tree | visited | temporal_precedence |  |
+| tree | stack | temporal_precedence |  |
+| tree traversal | depth first search | temporal_precedence |  |
+| tree traversal | visited | temporal_precedence |  |
+| tree traversal | stack | temporal_precedence |  |
+| vertex | visited | temporal_precedence |  |
+| vertex | stack | temporal_precedence |  |
+| vertex | pre-order traversal | temporal_precedence |  |
+| edge | visited | temporal_precedence |  |
+| edge | stack | temporal_precedence |  |
+| edge | pre-order traversal | temporal_precedence |  |
+| depth first search | pre-order traversal | temporal_precedence |  |
+| depth first search | traversal technique | temporal_precedence |  |
+| depth first search | breadth first search | temporal_precedence |  |
+| visited | stack | temporal_precedence |  |
+| visited | pre-order traversal | temporal_precedence |  |
+| visited | traversal technique | temporal_precedence |  |
+| stack | pre-order traversal | temporal_precedence |  |
+| stack | traversal technique | temporal_precedence |  |
+| stack | breadth first search | temporal_precedence |  |
+| pre-order traversal | breadth first search | temporal_precedence |  |

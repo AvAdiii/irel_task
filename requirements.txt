@@ -4,4 +4,8 @@ pytesseract
 Pillow
 scenedetect[opencv]
 rapidfuzz
-pyvis
+rich
+
+# approach_2 (LLM-in-the-loop)
+groq
+google-generativeai

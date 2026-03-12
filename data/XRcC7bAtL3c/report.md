@@ -1,90 +1,149 @@
-# Pedagogical Flow Report
-**Video:** `XRcC7bAtL3c`
+# Concept DAG Report — XRcC7bAtL3c
 
-## Pipeline Summary
-| Metric | Value |
-|--------|-------|
-| Raw ASR segments | 93 |
-| Normalized segments | 80 |
-| Concepts extracted | 14 |
-| Graph edges | 51 |
-| Causal anchors detected | 20 |
-| Causal edges created | 14 |
+**Source language:** English
+**Concepts:** 14 | **Edges:** 51 | **Topo order:** 14/14
 
-## Topological Order (Teaching Sequence)
-1. **tree**
-2. **node**
-3. **root node**
-4. **children**
-5. **left subtree**
-6. **right subtree**
-7. **binary tree**
-8. **dummy node**
-9. **tree traversal**
-10. **traversal technique**
-11. **in-order traversal**
-12. **post-order traversal**
-13. **pre-order traversal**
-14. **leaf node**
+## Topological Order
+
+1. Tree
+2. Node
+3. Root Node
+4. Children
+5. Left Subtree
+6. Right Subtree
+7. Binary Tree
+8. Dummy Node
+9. Tree Traversal
+10. Traversal Technique
+11. In-Order Traversal
+12. Post-Order Traversal
+13. Pre-Order Traversal
+14. Leaf Node
 
 ## Concepts
-| # | Concept | Mentions | First (s) | Sources |
-|---|---------|----------|-----------|---------|
-| 1 | pre-order traversal | 13 | 0 | asr, asr+ocr, ocr |
-| 2 | root node | 34 | 0 | asr+ocr, ocr |
-| 3 | tree | 12 | 3 | asr |
-| 4 | tree traversal | 2 | 3 | asr |
-| 5 | in-order traversal | 10 | 6 | asr |
-| 6 | post-order traversal | 17 | 6 | asr, asr+ocr, ocr |
-| 7 | left subtree | 29 | 12 | asr, asr+ocr, ocr |
-| 8 | node | 11 | 12 | asr, ocr |
-| 9 | right subtree | 13 | 22 | asr, asr+ocr, ocr |
-| 10 | traversal technique | 4 | 78 | asr |
-| 11 | binary tree | 2 | 99 | asr |
-| 12 | children | 7 | 105 | asr |
-| 13 | leaf node | 2 | 114 | asr |
-| 14 | dummy node | 2 | 120 | asr |
 
-## Example Tree
-Nodes: A, B, C, D, E, F, G, H, I
+### Pre-Order Traversal
+- Mentions: 13
+- First seen: 00:00
+- Sources: asr, asr+ocr, ocr
 
-## Edge Distribution
-| Edge Type | Count |
-|-----------|-------|
-| is_part_of | 1 |
-| is_prerequisite_for | 27 |
-| refines | 3 |
-| temporal_precedence | 20 |
+### Root Node
+- Mentions: 34
+- First seen: 00:00
+- Sources: asr+ocr, ocr
 
-## Prerequisite Edges (Domain + Causal)
-- **tree** -> **binary tree** (is_prerequisite_for, conf=0.90)
-- **tree** -> **tree traversal** (is_prerequisite_for, conf=0.90)
-- **binary tree** -> **tree traversal** (is_prerequisite_for, conf=0.90)
-- **node** -> **root node** (is_prerequisite_for, conf=0.80)
-- **node** -> **leaf node** (is_prerequisite_for, conf=0.80)
-- **root node** -> **tree traversal** (is_prerequisite_for, conf=0.80)
-- **children** -> **left subtree** (is_prerequisite_for, conf=0.70)
-- **children** -> **right subtree** (is_prerequisite_for, conf=0.70)
-- **tree traversal** -> **pre-order traversal** (refines, conf=0.90)
-- **tree traversal** -> **in-order traversal** (refines, conf=0.90)
-- **tree traversal** -> **post-order traversal** (refines, conf=0.90)
-- **traversal technique** -> **pre-order traversal** (is_prerequisite_for, conf=0.70)
-- **traversal technique** -> **in-order traversal** (is_prerequisite_for, conf=0.70)
-- **traversal technique** -> **post-order traversal** (is_prerequisite_for, conf=0.70)
-- **left subtree** -> **pre-order traversal** (is_prerequisite_for, conf=0.70)
-- **right subtree** -> **pre-order traversal** (is_prerequisite_for, conf=0.70)
-- **left subtree** -> **in-order traversal** (is_prerequisite_for, conf=0.80)
-- **right subtree** -> **in-order traversal** (is_prerequisite_for, conf=0.80)
-- **left subtree** -> **post-order traversal** (is_prerequisite_for, conf=0.80)
-- **right subtree** -> **post-order traversal** (is_prerequisite_for, conf=0.80)
-- **dummy node** -> **traversal technique** (is_part_of, conf=0.60)
-- **root node** -> **right subtree** (is_prerequisite_for, conf=0.70)
-- **root node** -> **left subtree** (is_prerequisite_for, conf=0.70)
-- **node** -> **right subtree** (is_prerequisite_for, conf=0.70)
-- **node** -> **left subtree** (is_prerequisite_for, conf=0.70)
-- **root node** -> **pre-order traversal** (is_prerequisite_for, conf=0.75)
-- **node** -> **pre-order traversal** (is_prerequisite_for, conf=0.75)
-- **root node** -> **in-order traversal** (is_prerequisite_for, conf=0.75)
-- **root node** -> **post-order traversal** (is_prerequisite_for, conf=0.75)
-- **node** -> **post-order traversal** (is_prerequisite_for, conf=0.75)
-- **tree** -> **node** (is_prerequisite_for, conf=0.75)
+### Tree
+- Mentions: 12
+- First seen: 00:03
+- Sources: asr
+
+### Tree Traversal
+- Mentions: 2
+- First seen: 00:03
+- Sources: asr
+
+### In-Order Traversal
+- Mentions: 10
+- First seen: 00:06
+- Sources: asr
+
+### Post-Order Traversal
+- Mentions: 17
+- First seen: 00:06
+- Sources: asr, asr+ocr, ocr
+
+### Left Subtree
+- Mentions: 29
+- First seen: 00:12
+- Sources: asr, asr+ocr, ocr
+
+### Node
+- Mentions: 11
+- First seen: 00:12
+- Sources: asr, ocr
+
+### Right Subtree
+- Mentions: 13
+- First seen: 00:22
+- Sources: asr, asr+ocr, ocr
+
+### Traversal Technique
+- Mentions: 4
+- First seen: 01:18
+- Sources: asr
+
+### Binary Tree
+- Mentions: 2
+- First seen: 01:39
+- Sources: asr
+
+### Children
+- Mentions: 7
+- First seen: 01:45
+- Sources: asr
+
+### Leaf Node
+- Mentions: 2
+- First seen: 01:54
+- Sources: asr
+
+### Dummy Node
+- Mentions: 2
+- First seen: 02:00
+- Sources: asr
+
+## Prerequisite Edges
+
+| From | To | Type | Rule |
+|------|-----|------|------|
+| tree | binary tree | is_prerequisite_for |  |
+| tree | tree traversal | is_prerequisite_for |  |
+| binary tree | tree traversal | is_prerequisite_for |  |
+| node | root node | is_prerequisite_for |  |
+| node | leaf node | is_prerequisite_for |  |
+| root node | tree traversal | is_prerequisite_for |  |
+| children | left subtree | is_prerequisite_for |  |
+| children | right subtree | is_prerequisite_for |  |
+| tree traversal | pre-order traversal | refines |  |
+| tree traversal | in-order traversal | refines |  |
+| tree traversal | post-order traversal | refines |  |
+| traversal technique | pre-order traversal | is_prerequisite_for |  |
+| traversal technique | in-order traversal | is_prerequisite_for |  |
+| traversal technique | post-order traversal | is_prerequisite_for |  |
+| left subtree | pre-order traversal | is_prerequisite_for |  |
+| right subtree | pre-order traversal | is_prerequisite_for |  |
+| left subtree | in-order traversal | is_prerequisite_for |  |
+| right subtree | in-order traversal | is_prerequisite_for |  |
+| left subtree | post-order traversal | is_prerequisite_for |  |
+| right subtree | post-order traversal | is_prerequisite_for |  |
+| dummy node | traversal technique | is_part_of |  |
+| root node | right subtree | is_prerequisite_for |  |
+| root node | left subtree | is_prerequisite_for |  |
+| node | right subtree | is_prerequisite_for |  |
+| node | left subtree | is_prerequisite_for |  |
+| root node | pre-order traversal | is_prerequisite_for |  |
+| node | pre-order traversal | is_prerequisite_for |  |
+| root node | in-order traversal | is_prerequisite_for |  |
+| root node | post-order traversal | is_prerequisite_for |  |
+| node | post-order traversal | is_prerequisite_for |  |
+| tree | node | is_prerequisite_for |  |
+| pre-order traversal | leaf node | temporal_precedence |  |
+| root node | traversal technique | temporal_precedence |  |
+| root node | binary tree | temporal_precedence |  |
+| root node | children | temporal_precedence |  |
+| tree | traversal technique | temporal_precedence |  |
+| tree | children | temporal_precedence |  |
+| tree | dummy node | temporal_precedence |  |
+| tree traversal | traversal technique | temporal_precedence |  |
+| tree traversal | leaf node | temporal_precedence |  |
+| in-order traversal | leaf node | temporal_precedence |  |
+| post-order traversal | leaf node | temporal_precedence |  |
+| left subtree | traversal technique | temporal_precedence |  |
+| left subtree | binary tree | temporal_precedence |  |
+| left subtree | leaf node | temporal_precedence |  |
+| node | traversal technique | temporal_precedence |  |
+| node | binary tree | temporal_precedence |  |
+| node | children | temporal_precedence |  |
+| right subtree | binary tree | temporal_precedence |  |
+| right subtree | leaf node | temporal_precedence |  |
+| right subtree | dummy node | temporal_precedence |  |
