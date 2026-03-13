@@ -24,7 +24,25 @@ from approach_2 import m4_concepts
 from approach_2 import m5_prereqs
 from approach_1 import m6_visualize
 
-API_KEY = os.environ.get("GROQ_API_KEY", "")
+
+def load_dotenv(dotenv_path: Path) -> None:
+    """Lightweight .env loader (no external dependency)."""
+    if not dotenv_path.exists():
+        return
+
+    for line in dotenv_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        os.environ.setdefault(key, value)
+
+
+load_dotenv(PROJECT_ROOT / ".env")
+API_KEY = os.getenv("GROQ_API_KEY", "").strip()
 
 # the 5 test videos
 VIDEOS = [
@@ -115,6 +133,11 @@ def run_video(video_id: str):
 
 
 def main():
+    if not API_KEY:
+        raise RuntimeError(
+            "Missing GROQ_API_KEY. Add it to .env or export GROQ_API_KEY in your shell."
+        )
+
     t_start = time.time()
     print("=" * 70)
     print("  approach_2 — LLM-in-the-loop (Groq / Llama 3.3 70B)")
