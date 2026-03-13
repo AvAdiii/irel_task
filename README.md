@@ -1,6 +1,6 @@
 # Code-Mixed Pedagogical Flow Extractor
 
-**iREL Recruitment Task 2026** — Extracting pedagogical concept prerequisite DAGs
+**iREL Recruitment Task 2026** - Extracting pedagogical concept prerequisite DAGs
 from code-mixed (Hindi/Telugu + English) video lectures using multimodal NLP.
 
 ## Quick Start
@@ -51,7 +51,7 @@ This project implements **two independent approaches** to concept extraction:
 
 Both approaches share **M1** (ingest), **M2** (ASR+OCR), and **M6** (visualize).
 
-### Pipeline Overview (Approach 1 — Regex)
+### Pipeline Overview (Approach 1 - Regex)
 
 ```
 YouTube URL
@@ -64,7 +64,7 @@ YouTube URL
          ▼
 ┌─────────────────┐
 │  M2: Extraction │  whisper ASR (translate mode) + tesseract OCR
-└────────┬────────┘  ← KEY FIX: task="translate" for non-english
+└────────┬────────┘  <- KEY FIX: task="translate" for non-english
          │
          ▼
 ┌─────────────────┐
@@ -87,19 +87,19 @@ YouTube URL
 └─────────────────┘
 ```
 
-### Pipeline Overview (Approach 2 — LLM-in-the-loop)
+### Pipeline Overview (Approach 2 - LLM-in-the-loop)
 
 ```
 YouTube URL
     │
     ▼
 ┌──────────────────────────┐
-│  M1: Ingestion           │  ← reused from approach_1
+│  M1: Ingestion           │  <- reused from approach_1
 └────────┬─────────────────┘
          │
          ▼
 ┌──────────────────────────┐
-│  M2: ASR + OCR           │  ← reused from approach_1
+│  M2: ASR + OCR           │  <- reused from approach_1
 └────────┬─────────────────┘
          │
          ▼
@@ -109,7 +109,7 @@ YouTube URL
          │
          ▼
 ┌──────────────────────────┐
-│  M4: Groq LLM Concepts  │  llama-3.3-70b semantic concept extraction
+│  M4: Groq LLM Concepts   │   semantic concept extraction
 └────────┬─────────────────┘
          │
          ▼
@@ -119,7 +119,7 @@ YouTube URL
          │
          ▼
 ┌──────────────────────────┐
-│  M6: Visualize           │  ← reused from approach_1
+│  M6: Visualize           │  <- reused from approach_1
 └──────────────────────────┘
 ```
 
@@ -135,7 +135,7 @@ This tells Whisper to translate all speech into English, which:
 1. Converts Devanagari CS terms back to English ("रिकर्जन" → "recursion")
 2. Handles Telugu and other Indic languages the same way
 3. Has zero impact on English-only lectures (translate ≈ transcribe for English)
-4. Requires no external translation APIs — Whisper handles it natively
+4. Requires no external translation APIs - Whisper handles it natively
 
 **Dual output**: M2 saves both `transcript_original.json` (native script, for
 reference) and `transcript.json` (English, used by M3-M6). The source language
@@ -287,7 +287,7 @@ System requirements: `ffmpeg`, `tesseract-ocr` (with eng+hin language data)
 
 ## Tested Videos
 
-### Approach 1 (Regex) — All 5 Videos
+### Approach 1 (Regex) - All 5 Videos
 
 | Video ID | Topic | Language | Concepts | Edges | Topo |
 |----------|-------|----------|----------|-------|------|
@@ -297,17 +297,17 @@ System requirements: `ffmpeg`, `tesseract-ocr` (with eng+hin language data)
 | azXr6nTaD9M | Recursion & Stack | Hindi | 7 | 16 | 7/7 |
 | eXWl-Uor75o | Sorting & Merge Sort | Telugu | 8 | 21 | 8/8 |
 
-### Approach 2 (LLM) — 3 of 5 Videos (rate limited)
+### Approach 2 (LLM) - implemented on 3 of 5 Videos (rate limited)
 
 | Video ID | Topic | Language | Concepts | Edges | Topo |
 |----------|-------|----------|----------|-------|------|
 | XRcC7bAtL3c | Tree Traversal | English | 7 | 6 | 7/7 |
 | N2P7w22tN9c | BFS/DFS Graph | English | 10 | 9 | 10/10 |
 | azXr6nTaD9M | Recursion & Stack | Hindi | 9 | 8 | 9/9 |
-| Tp37HXfekNo | DBMS Primary Keys | Hindi | — | — | ❌ rate limited |
-| eXWl-Uor75o | Sorting & Merge Sort | Telugu | — | — | ❌ rate limited |
+| Tp37HXfekNo | DBMS Primary Keys | Hindi | - | - | ❌ rate limited |
+| eXWl-Uor75o | Sorting & Merge Sort | Telugu | - | - | ❌ rate limited |
 
-### Head-to-Head Comparison (3 completed videos)
+### Comparison of the two approaches
 
 | Metric | Approach 1 (Regex) | Approach 2 (LLM) |
 |--------|-------------------|------------------|
@@ -319,17 +319,11 @@ System requirements: `ffmpeg`, `tesseract-ocr` (with eng+hin language data)
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed per-video comparison.
 
-## Known Limitations
+## Limitations
 
-1. **Whisper small on Telugu**: May produce lower quality translations. Consider
-   using `--model medium` for Telugu videos.
-2. **Domain coverage (approach_1)**: M4 regex patterns cover trees, graphs,
-   BFS/DFS, DBMS, sorting. New CS domains require extending the pattern list.
-3. **Rate limits (approach_2)**: Both Gemini free tier and Groq free tier have
-   request/token limits. Only 3 of 5 videos completed. Production deployment
-   needs a paid API plan or self-hosted LLM.
-4. **LLM granularity (approach_2)**: LLMs abstract away structural sub-concepts
-   (left_subtree, node, children) in favor of higher-level terms.
+1. **Whisper small on Telugu**: May produce lower quality translations. Can consider using `--model medium` for Telugu videos.
+2. **Domain coverage (approach_1)**: M4 regex patterns cover trees, graphs, BFS/DFS, DBMS, sorting. New CS domains require extending the pattern list manually.
+3. **Rate limits (approach_2)**: Both Gemini free tier and Groq free tier have request/token limits. Only 3 of 5 videos completed. Production deployment needs a paid API plan or locally hosted LLM.
+4. **LLM granularity (approach_2)**: LLMs abstract away structural sub-concepts (left_subtree, node, children) in favor of higher-level terms.
 5. **OCR quality**: Heavily depends on video resolution and text clarity.
-6. **Processing time**: Whisper ASR is CPU-intensive. Two passes (transcribe +
-   translate) for non-English videos doubles the ASR time.
+6. **Processing time**: Whisper ASR is CPU-intensive. Two passes (transcribe + translate) for non-English videos doubles the ASR time.
