@@ -22,9 +22,11 @@ import contextlib
 import threading
 from pathlib import Path
 
-# add approach_1 to path
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "approach_1"))
+# add project root to path for both approaches
+PROJECT_ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
+# try importing rich
 try:
     from rich.console import Console
     from rich.panel import Panel
@@ -39,7 +41,28 @@ try:
 except ImportError:
     HAS_RICH = False
 
-from approach_1 import pipeline as pipe
+from approach_1 import pipeline as pipe1
+from approach_2 import pipeline as pipe2
+
+
+def load_dotenv(dotenv_path: Path) -> None:
+    """Lightweight .env loader (no external dependency)."""
+    if not dotenv_path.exists():
+        return
+
+    for line in dotenv_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        os.environ.setdefault(key, value)
+
+
+load_dotenv(PROJECT_ROOT / ".env")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
 
 
 # ───────────────── ansi fallback (no rich) ─────────────────
@@ -67,8 +90,8 @@ def _fallback_demo():
     print("  starting pipeline...")
     print("-" * 60)
 
-    summary = pipe.run_pipeline(url, model=model, data_root="data",
-                                force_from=force)
+    summary = pipe1.run_pipeline(url, model=model, data_root="data",
+                                 force_from=force)
 
     print("-" * 60)
     print(f"\n  results:")
@@ -155,14 +178,14 @@ def _rich_demo():
 
     model = console.input("[bold green]►[/] Whisper model [dim]\\[small][/]: ").strip() or "small"
     force = console.input("[bold green]►[/] Force from stage [dim](m1-m6 or enter)[/]: ").strip() or None
-    if force and force not in pipe.STAGES:
+    if force and force not in pipe1.STAGES:
         console.print(f"[red]invalid stage: {force}[/]")
         return
 
     console.print()
 
     # state tracking
-    stage_status = {s: "waiting" for s in pipe.STAGES}
+    stage_status = {s: "waiting" for s in pipe1.STAGES}
     stage_results = {}
     current_stage = [None]
     log_capture = LogCapture(max_lines=100)
@@ -194,7 +217,7 @@ def _rich_demo():
         tbl.add_column("Status", width=10, justify="center")
         tbl.add_column("Detail", ratio=1)
 
-        for i, s in enumerate(pipe.STAGES, 1):
+        for i, s in enumerate(pipe1.STAGES, 1):
             name, desc = STAGE_INFO.get(s, (s, ""))
             st = stage_status[s]
             if st == "waiting":
@@ -262,7 +285,7 @@ def _rich_demo():
     def run_thread():
         try:
             log_capture.start()
-            result[0] = pipe.run_pipeline(
+            result[0] = pipe1.run_pipeline(
                 url, model=model, data_root="data",
                 force_from=force, callback=progress_callback,
             )
