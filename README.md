@@ -291,8 +291,8 @@ System requirements: `ffmpeg`, `tesseract-ocr` (with eng+hin language data)
 
 | Video ID | Topic | Language | Concepts | Edges | Topo |
 |----------|-------|----------|----------|-------|------|
-| XRcC7bAtL3c | Tree Traversal | English | 14 | 51 | 14/14 |
-| N2P7w22tN9c | BFS/DFS Graph | English | 12 | 41 | 12/12 |
+| XRcC7bAtL3c | Tree Traversal | Hindi | 14 | 51 | 14/14 |
+| N2P7w22tN9c | BFS/DFS Graph | Hindi | 12 | 41 | 12/12 |
 | Tp37HXfekNo | DBMS Primary Keys | Hindi | 10 | 19 | 10/10 |
 | azXr6nTaD9M | Recursion & Stack | Hindi | 7 | 16 | 7/7 |
 | eXWl-Uor75o | Sorting & Merge Sort | Telugu | 8 | 21 | 8/8 |
@@ -301,8 +301,8 @@ System requirements: `ffmpeg`, `tesseract-ocr` (with eng+hin language data)
 
 | Video ID | Topic | Language | Concepts | Edges | Topo |
 |----------|-------|----------|----------|-------|------|
-| XRcC7bAtL3c | Tree Traversal | English | 7 | 6 | 7/7 |
-| N2P7w22tN9c | BFS/DFS Graph | English | 10 | 9 | 10/10 |
+| XRcC7bAtL3c | Tree Traversal | Hindi | 7 | 6 | 7/7 |
+| N2P7w22tN9c | BFS/DFS Graph | Hindi | 10 | 9 | 10/10 |
 | azXr6nTaD9M | Recursion & Stack | Hindi | 9 | 8 | 9/9 |
 | Tp37HXfekNo | DBMS Primary Keys | Hindi | - | - | ❌ rate limited |
 | eXWl-Uor75o | Sorting & Merge Sort | Telugu | - | - | ❌ rate limited |
